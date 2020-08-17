@@ -1,0 +1,45 @@
+[
+    {
+        "coord": {
+            "lon": 83.21,
+            "lat": 17.69
+        },
+        "weather": [
+            {
+                "id": 721,
+                "main": "Haze",
+                "description": "haze",
+                "icon": "50d"
+            }
+        ],
+        "base": "stations",
+        "main": {
+            "temp": 303.15,
+            "feels_like": 303.53,
+            "temp_min": 303.15,
+            "temp_max": 303.15,
+            "pressure": 1001,
+            "humidity": 70
+        },
+        "visibility": 5000,
+        "wind": {
+            "speed": 7.7,
+            "deg": 250
+        },
+        "clouds": {
+            "all": 75
+        },
+        "dt": 1597647395,
+        "sys": {
+            "type": 1,
+            "id": 9255,
+            "country": "IN",
+            "sunrise": 1597623024,
+            "sunset": 1597668739
+        },
+        "timezone": 19800,
+        "id": 1253102,
+        "name": "Visakhapatnam",
+        "cod": 200
+    }
+]
