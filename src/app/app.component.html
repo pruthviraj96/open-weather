@@ -6,8 +6,11 @@
   <div class="row">
     <div class="col-sm-6 col-md-4 mb-3" *ngFor="let weather of weatherGrid; let index = index">
       <div class="card bg-dark text-white">
-        <img class="bg-img"
-          src="{{weather.name ? weather.bgImage : 'assets/blur.jpg'}}" />
+        <img class="bg-img" *ngIf="!weather.name" src="assets/blur.jpg" />
+        <img class="bg-img" *ngIf="weather && weather.name && weather.weather[0].main === 'Rain'" src="assets/rain.jpg" />
+        <img class="bg-img" *ngIf="weather && weather.name && weather.weather[0].main === 'Mist'" src="assets/mist.jpg" />
+        <img class="bg-img" *ngIf="weather && weather.name && weather.weather[0].main === 'Clouds'" src="assets/clouds.jpg" />
+        <img class="bg-img" *ngIf="weather && weather.name && weather.weather[0].main === 'Haze'" src="assets/haze.jpg" />
         <div class="card-img-overlay">
           <div class="input-group mb-3">
             <input type="text" class="form-control" value="{{weather.name || ''}}" placeholder="Country Name"
@@ -21,10 +24,10 @@
               <img src="http://openweathermap.org/img/wn/{{icon.icon}}.png" />
               {{icon.description}}</h5>
           </span>
-          <p class="card-text">
-            {{weather.dt | date: 'short'}}
-            This is a wider card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
+          <p class="card-text" *ngIf="weather.dt">Last updated on: {{weather.dt | date: 'medium'}}</p>
+          <div *ngIf="weather.coord">
+            Londitude: {{weather.coord.lat}}, Latitude: {{weather.coord.lon}}
+          </div>
         </div>
       </div>
     </div>

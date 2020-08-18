@@ -28,7 +28,6 @@ export class AppComponent {
       console.log(weather);
       this.weatherGrid[grid] = weather;
       this.weatherGrid[grid].dt = new Date(this.weatherGrid[grid].dt * 1000);
-      debugger
       switch (this.weatherGrid[grid].weather[0].main) {
         case 'Clouds':
           this.weatherGrid[grid].bgImage = 'assets/clouds.jpg';
